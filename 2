@@ -1,0 +1,21 @@
+#include<stdio.h>
+#include<stdlib.h>
+int main()
+{
+	FILE *archivo;
+	char caracter;
+	archivo=fopen("origen.txt","r");
+	if(archivo==NULL)
+		printf("\nError de apertura del archivo.\n\n");
+	else
+	{
+		printf("\nEl contenido del archivo origen es:\n\n");
+		while(feof(archivo)==0)
+		{
+			caracter=fgetc(archivo);
+			printf("%c", caracter);
+		}
+	}
+	fclose(archivo);
+	return 0;
+}
